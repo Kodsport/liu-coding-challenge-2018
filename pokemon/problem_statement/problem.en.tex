@@ -20,7 +20,7 @@ Can you compute the minimum number of \emph{moves} needed to get from each point
 Note that a move may result in the player traveling multiple squares if gliding on the ice.
 
 \section*{Input}
-The first line of the input contains the two integers $1 \le R \le 1\,000$ and $1 \le C \le 1\,000$, the number of rows and columns that the maze consists of.
+The first line of the input contains the two integers $3 \le C \le 1\,000$ and $3 \le R \le 1\,000$, the number of columns and rows that the maze consists of.
 
 The next $R$ lines contains $C$ characters each, describing the maze.
 Each square in the maze is represented by one of the following characters:
@@ -31,6 +31,9 @@ Each square in the maze is represented by one of the following characters:
 \item an M (\texttt{M}) represents the goal in the maze, which is also covered in gravel
 \end{itemize}
 
+The edges of the maze is always surrounded by gravel squres.
 
 \section*{Output}
 Output $R$ lines with $C$ integers each, one for each square, containing the number of moves needed to reach the goal.
+
+If it is not possible to reach the target from a square, output $-1$ instead for that square.

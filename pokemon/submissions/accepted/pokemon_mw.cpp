@@ -240,7 +240,7 @@ int main() {
     for (size_t i = 0; i < distance.getHeight(); i++) {
         for (size_t j = 0; j < distance.getWidth(); j++) {
             if (j > 0)
-                cout << "\t";
+                cout << " ";
             Position pos((int)j, (int)i);
             if (distance.at(pos).reachable)
                 cout << distance.at(pos).distance;
