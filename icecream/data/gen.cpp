@@ -61,7 +61,7 @@ void shuffle_flavours(){
 }
 
 void print(){
-	printf("%d %d %d %d\n", n, k, a, b);
+	printf("%d %d %d %d\n", n, k, max(1, a), max(1, b));
 	rep(i,0,k){
 		printf("%d", t[i]);
 		if(i == k-1)

@@ -1,3 +1,5 @@
 author: Mårten Wiman
 source: LiU Coding Challenge
 license: cc by-sa
+
+validator_flags: float_tolerance 1e-7
