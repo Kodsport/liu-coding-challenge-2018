@@ -1,0 +1,36 @@
+\problemname{Pokémon Ice Maze}
+You are hired as a level designer for the next Pokémon series, with games called \emph{Ice} and \emph{Fire}.
+For the first of these two games, players have to get through a maze in an icy cave.
+The cave is represented as a grid, with each square of the grid being either ice, gravel or an obstacle.
+
+The player will start at a square, and then do a number of moves, represented by one of the four cardinal directions.
+The maze behaves in the following way.
+Assume that the square the player is trying to move into is an obstacle.
+In this case, the player does not move.
+If the square the player is moving into is gravel, the player successfully moves to the square and will stand still on the square.
+If the square is ice however, the player will automatically perform an additional move in the same direction.
+This means the player will glide on the ice until either colliding with an obstacle or reaching a square filled with gravel.
+
+You have almost finished your level design.
+In the maze, there is a goal square that you wish to reach.
+You still have to choose a square to be the starting point of the player.
+Since you do not want the level to be too easy, you want to make sure the number of moves needed to get from the starting point to the goal is sufficiently high.
+
+Can you compute the minimum number of \emph{moves} needed to get from each point in the maze to the goal?
+Note that a move may result in the player traveling multiple squares if gliding on the ice.
+
+\section*{Input}
+The first line of the input contains the two integers $1 \le R \le 1\,000$ and $1 \le C \le 1\,000$, the number of rows and columns that the maze consists of.
+
+The next $R$ lines contains $C$ characters each, describing the maze.
+Each square in the maze is represented by one of the following characters:
+\begin{itemize}
+\item a period (\texttt{.}) represents a gravel square
+\item a pound sign (\texttt{#}) represents an obstacle
+\item an underscore (\texttt{_}) represents an ice square
+\item an M (\texttt{M}) represents the goal in the maze, which is also covered in gravel
+\end{itemize}
+
+
+\section*{Output}
+Output $R$ lines with $C$ integers each, one for each square, containing the number of moves needed to reach the goal.
