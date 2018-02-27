@@ -1,0 +1,29 @@
+\problemname{Short Sell}
+Simone is learning to trade crypto currencies.
+Right now, she is looking into a new currency called \emph{CryptoKattis}.
+A CryptoKattis can be used to improve your Kattis ranklist score without having to solve problems.
+
+Simone, unlike most competitive programmers, is very perceptive of competition trends.
+She has lately noticed many coders talking about a new online judge called \emph{Doggo}, and suspect that using the Kattis judge will soon fall out of fashion.
+This, of course, will cause the CryptoKattis to rapidly fall in value once demand fades.
+
+To take advantage of this, Simone has performed very careful market research.
+This has allowed her to estimate the price of a CryptoKattis during the next $N$ days, in dollars.
+She intends to use this data to perform a \emph{short sell}.
+This means she will at some day borrow CryptoKattis for $100$ dollars, immediately selling the currency.
+At some other day, she must purchase the same amount of CryptoKattis to repay her loan.
+For every day between (and including) these two days, she must pay $K$ dollars in rent.
+
+\section*{Input}
+The first line of the input contains two integers $1 \le N \le 100\,000$ and $1 \le K \le 100$.
+$N$ is the number of days you know the stock price of, and $K$ is the cost in dollars of renting stocks per day.
+
+The next line contains $N$ integers separated by spaces.
+These are the stock prices during the $N$ days.
+Each stock price is between $1$ and $100\,000$ dollars.
+
+\section*{Output}
+Output a single decimal number; the maximum profit you can make performing a short sell.
+If you cannot make a profit no matter what short sell you make, output $0$.
+
+Your answer will accepted if it is within a relative or absolute error of at most $10^{-7}$ of the correct answer.
