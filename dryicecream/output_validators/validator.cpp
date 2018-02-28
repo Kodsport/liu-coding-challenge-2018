@@ -107,6 +107,7 @@ int main(int argc, char** argv) {
 					bottle[x] -= use;
 				}
 			}
+			else die("invalid command");
 		}
 
 		if (target != 0) die("did not hit target");
