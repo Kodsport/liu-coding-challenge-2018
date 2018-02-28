@@ -11,7 +11,18 @@ typedef vector<int> vi;
 
 vi bot, ebot, has, w;
 
+int T;
+
 int N(int x) { return w[x] + 1; }
+
+int dispose(int x) {
+    int ret = has[x];
+    cout << "transfer " << N(x) << " 0" << endl; 
+    has[x] = 0;
+    T -= ret;
+    return ret;
+}
+
 
 int transfer(int from, int to) {
     int cantransfer = min(has[from], bot[to] - has[to]);
@@ -36,19 +47,14 @@ int fillBottle(int x) {
     if (x == sz(bot) - 1) return fill(x);
     discard(x + 1);
     fillBottle(x + 1);
-    while (true) {
+    while (true && T) {
         transfer(x + 1, x);
+        if (has[x] && has[x] <= T) return dispose(x);
         if (has[x] == ebot[x]) return ebot[x];
         if (has[x] == bot[x]) discard(x);
         if (!has[x + 1]) fillBottle(x + 1);
     }
-}
-
-int dispose() {
-    int ret = has[0];
-    cout << "transfer " << N(0) << " 0" << endl; 
-    has[0] = 0;
-    return ret;
+    return 0;
 }
 
 int main() {
@@ -85,13 +91,12 @@ int main() {
     for (int i = N - 2; i >= 0; --i) {
         ebot[i] = __gcd(bot[i], ebot[i + 1]);
     }
-    int T;
     cin >> T;
     if (T % ebot[0]) cout << "impossible" << endl;
     else {
         while (T) {
             fillBottle(0);
-            T -= dispose();
+            dispose(0);
         }
     }
 }
