@@ -56,12 +56,18 @@ int main() {
 	cin.exceptions(cin.failbit);
     int N;
     cin >> N;
+    vi idx(N);
+    iota(all(idx), 0);
     bot.resize(N);
     ebot.resize(N);
     has.resize(N);
     rep(i,0,N) cin >> bot[i];
+    sort(all(idx), [&](int a, int b) {
+        return bot[a] > bot[b];
+    });
+    sort(all(bot), greater<int>());
     ebot[N - 1] = bot[N - 1];
-    w.push_back(N-1);
+    w.push_back(idx[N-1]);
     for (int i = N - 2; i >= 0; --i) {
         ebot[i] = __gcd(bot[i], ebot[i + 1]);
         if (ebot[i] == ebot[i + 1]) {
@@ -70,10 +76,15 @@ int main() {
             has.erase(has.begin() + i);
             --N;
         } else {
-            w.push_back(i);
+            w.push_back(idx[i]);
         }
     }
-    reverse(all(w));
+    reverse(all(bot));
+    ebot[N - 1] = bot[N - 1];
+    w.push_back(idx[N-1]);
+    for (int i = N - 2; i >= 0; --i) {
+        ebot[i] = __gcd(bot[i], ebot[i + 1]);
+    }
     int T;
     cin >> T;
     if (T % ebot[0]) cout << "impossible" << endl;
