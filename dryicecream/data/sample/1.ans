@@ -1,10 +1,10 @@
 fill 2
-pour 2 1
-pour 2 0
+transfer 2 1
+transfer 2 0
 discard 1
 fill 2
-pour 2 1
-pour 2 0
+transfer 2 1
+transfer 2 0
 discard 1
 fill 2
-pour 2 0
+transfer 2 0
