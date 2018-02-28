@@ -7,4 +7,4 @@ for i in range(n):
     max_val = max(max_val, v[i])
     ans = max(ans, max_val - v[i])
 
-print max(ans-k, 0)
+print ans-k
