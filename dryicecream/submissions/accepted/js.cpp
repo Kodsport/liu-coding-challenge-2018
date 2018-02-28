@@ -9,24 +9,26 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 
-vi bot, ebot, has;
+vi bot, ebot, has, w;
+
+int N(int x) { return w[x] + 1; }
 
 int transfer(int from, int to) {
     int cantransfer = min(has[from], bot[to] - has[to]);
-    cout << "transfer " << (from + 1) << " " << (to + 1) << endl;;
+    cout << "transfer " << N(from) << " " << N(to) << endl;
     has[from] -= cantransfer;
     has[to] += cantransfer;
     return cantransfer;
 }
 
 int fill(int x) {
-    cout << "fill " << (x + 1) << endl;
+    cout << "fill " << N(x) << endl;
     has[x] = bot[x];
     return bot[x];
 }
 
 void discard(int x) {
-    cout << "discard " << (x + 1) << endl;
+    cout << "discard " << N(x) << endl;
     has[x] = 0;
 }
 
@@ -44,7 +46,7 @@ int fillBottle(int x) {
 
 int dispose() {
     int ret = has[0];
-    cout << "transfer 1 0" << endl; 
+    cout << "transfer " << N(0) << " 0" << endl; 
     has[0] = 0;
     return ret;
 }
@@ -59,9 +61,19 @@ int main() {
     has.resize(N);
     rep(i,0,N) cin >> bot[i];
     ebot[N - 1] = bot[N - 1];
+    w.push_back(N-1);
     for (int i = N - 2; i >= 0; --i) {
         ebot[i] = __gcd(bot[i], ebot[i + 1]);
+        if (ebot[i] == ebot[i + 1]) {
+            bot.erase(bot.begin() + i);
+            ebot.erase(ebot.begin() + i);
+            has.erase(has.begin() + i);
+            --N;
+        } else {
+            w.push_back(i);
+        }
     }
+    reverse(all(w));
     int T;
     cin >> T;
     if (T % ebot[0]) cout << "impossible" << endl;
