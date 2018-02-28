@@ -1,10 +1,9 @@
 \problemname{Östgötska}
 Anders talks in the Swedish dialect of \emph{östgötska}.
-Unfortunately, this makes it somewhat hard to take him seriously.
+Unfortunately, this makes it somewhat hard to get a programming job in the Swedish capital of Stockholm.
+The trendy Stockholm hipsters only accept applicants speaking the standard Swedish dialect, \emph{rikssvenska}.
 
-He is currently applying for a job in the Swedish capital of Stockholm.
-To increase his chances of passing interviews, he wishes to practice the standard Swedish dialect,
-\emph{rikssvenska}.
+To increase his chances of passing interviews, he wishes to practice talking rikssvenska.
 To help him with this, he wants you to write a program that can determine whenever he accidentally reverts to speaking östgötska.
 
 A simple way of determining if a sentence is written in östgötska is if at least $40\%$ of the words in the sentence contains the letter \texttt{ä}.
@@ -13,7 +12,7 @@ For simplicity, this is encoded as the letter combination \texttt{ae} (meaning a
 \section*{Input}
 The first and only line of input contains a sequence of space-separated words.
 Each word consists only of letters \texttt{a-z}.
-There are at most $100$ words, and each word contains at most $10$ letters.
+There are at most $100$ words, and each word contains at most $15$ letters \texttt{a-z} (meaning that the \texttt{ae} combination counts as two letters for this limit).
 
 \section*{Output}
 Output ``\texttt{dae ae ju traeligt va}'' if the input sentence is in östgötska, otherwise output ``\texttt{haer talar vi rikssvenska}''.
