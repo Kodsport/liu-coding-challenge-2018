@@ -61,6 +61,12 @@ int main() {
     ebot[N - 1] = bot[N - 1];
     for (int i = N - 2; i >= 0; --i) {
         ebot[i] = __gcd(bot[i], ebot[i + 1]);
+        if (ebot[i] == ebot[i + 1]) {
+            bot.erase(bot.begin() + i);
+            ebot.erase(ebot.begin() + i);
+            has.erase(has.begin() + i);
+            --N;
+        }
     }
     int T;
     cin >> T;
