@@ -3,7 +3,7 @@ from sys import stdin
 import re, sys
 
 line = stdin.readline()
-r, c = map(int, line.split())
+c, r = map(int, line.split())
 goals = 0
 for _ in range(r):
     line = stdin.readline()
