@@ -121,6 +121,33 @@ class RandomGenerator : public Generator {
         }
 };
 
+class RowsGenerator : public Generator {
+    public:
+        Map generate(int height, int width) {
+            vector<vector<Square>> squares(height, vector<Square>(width));
+            for (size_t y = 0; y < height; y++) {
+                for (size_t x = 0; x < width; x++) {
+                    if (x == 0 || x+1 == width || y == 0 || y+1 == height) {
+                        squares[y][x] = Square::Wall;
+                    }
+                    else if (x == 1) {
+                        squares[y][x] = Square::Walkable;
+                    }
+                    else if (y%3 == 0){
+                        squares[y][x] = Square::Wall;
+                    }
+                    else if (y%3 == 1){
+                        squares[y][x] = Square::Ice;
+                    }
+                    else {
+                        squares[y][x] = Square::Walkable;
+                    }
+                }
+            }
+            return Map(move(squares));
+        }
+};
+
 class LabyrinthGenerator : public Generator {
 
     protected:
@@ -181,7 +208,7 @@ class LabyrinthGenerator : public Generator {
 
 class RandomLabyrinthGenerator : public LabyrinthGenerator {
     private:
-        void dfs(const Position& pos, const Map& m, mt19937& randomnessEngine) {
+        void dfs(const Position& pos, const Map& m, mt19937& randomnessEngine) override {
             visited[pos.y][pos.x] = true;
 
             auto adjacent = getAdjacent(pos);
@@ -209,7 +236,7 @@ class LongPathLabyrinthGenerator : public LabyrinthGenerator {
 
         Position previousPosition;
 
-        void dfs(const Position& pos, const Map& m, mt19937& randomnessEngine) {
+        void dfs(const Position& pos, const Map& m, mt19937& randomnessEngine) override {
             visited[pos.y][pos.x] = true;
 
             auto adjacent = getAdjacent(pos);
@@ -330,6 +357,10 @@ int main(int argc, char* argv[]) {
     else if (type == "long_path") {
         LongPathLabyrinthGenerator generator;
         m = generator.generate(width, height, probabilities, randomnessEngine);
+    }
+    else if (type == "rows") {
+        RowsGenerator generator;
+        m = generator.generate(width, height);
     }
 
     Position goal(-1, -1);
