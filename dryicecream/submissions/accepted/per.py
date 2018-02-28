@@ -7,6 +7,13 @@ n = int(raw_input())
 V = [0] + map(int, raw_input().split())
 t = int(raw_input())
 
+init = []
+for i in range(1, n+1):
+    while V[i] <= t:
+        init.append('fill %d' % i)
+        init.append('transfer %d 0' % i)
+        t -= V[i]
+
 d = 0
 coeffs = [0]*(n+1)
 for i in range(1, n+1):
@@ -17,11 +24,15 @@ for i in range(1, n+1):
     if t % d == 0:
         break
 
+#print coeffs
+
 for i in range(1, n+1):
     for j in range(1, n+1):
-        while abs(coeffs[i] - V[j]) + abs(coeffs[j] + V[i]) < abs(coeffs[i]) + abs(coeffs[j]):
+        while 2*coeffs[i] >= V[i] and 2*coeffs[j] <= -V[j]:
             coeffs[i] -= V[j]
             coeffs[j] += V[i]
+
+#print coeffs
 
 if t % d:
     print 'impossible'
@@ -39,7 +50,7 @@ else:
 
     while have != d:
         for i in range(1, n+1):
-            if coeffs[i] < 0 and have >= V[i]:
+            while coeffs[i] < 0 and have >= V[i]:
                 for j in range(1, n+1):
                     transfer(j, i)
                 assert cur[i] == V[i]
@@ -47,7 +58,7 @@ else:
                 coeffs[i] += 1
                 cur[i] = 0
                 basic.append('discard %d' % i)
-            if coeffs[i] > 0 and have + V[i] <= cap:
+            while coeffs[i] > 0 and have + V[i] <= cap:
                 for j in range(1, n+1):
                     transfer(i, j)
                 assert cur[i] == 0
@@ -58,6 +69,8 @@ else:
     for i in range(1, n+1):
         if cur[i]:
             basic.append('transfer %d 0' % i)
+    for L in init:
+        print L
     for _ in range(t/d):
         for L in basic:
             print L
