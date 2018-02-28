@@ -1,0 +1,110 @@
+dryicecream
+===============
+Loading problem dryicecream
+Checking config
+Checking statement
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+Checking validators
+Checking graders
+Checking data
+Checking submissions
+   AC submission dryicecream_mw.cpp (C++) OK: AC [CPU: 0.00s @ test case secret/37-per]
+   AC submission js.cpp (C++) OK: AC [CPU: 0.00s @ test case secret/40-per]
+   AC submission per.py (Python 2) OK: AC [CPU: 0.04s @ test case secret/31-per]
+   Slowest AC runtime: 0.043, setting timelim to 1 secs, safety margin to 2 secs
+dryicecream tested: 0 errors, 0 warnings
+
+
+icecream
+===============
+Loading problem icecream
+Checking config
+Checking statement
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+Checking validators
+Checking graders
+Checking data
+Checking submissions
+   AC submission icecream_mw.cpp (C++) OK: AC [CPU: 0.21s @ test case secret/random-large-3]
+   AC submission icecream_period_mw.cpp (C++) OK: AC [CPU: 0.01s @ test case secret/mlarge_scoops-large-2]
+   AC submission per.py (Python 2) OK: AC [CPU: 1.06s @ test case secret/cycles-large-3]
+   Slowest AC runtime: 1.062, setting timelim to 5 secs, safety margin to 11 secs
+   TLE submission icecream_mw.cpp (C++) OK: TLE [test case: test case secret/cycles-large-1, CPU: 12.00s @ test case secret/cycles-large-1]
+WARNING in submissions: TLE submission icecream_period_mw.cpp (C++) sensitive to time limit: limit of 5 secs -> TLE, limit of 11 secs -> AC
+   TLE submission icecream_period_mw.cpp (C++) OK: TLE [test case: test case secret/random-small-6, CPU: 6.42s @ test case secret/mlarge_scoops-large-4]
+icecream tested: 0 errors, 1 warnings
+
+
+ostgotska
+===============
+Loading problem ostgotska
+Checking config
+Checking statement
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+Checking validators
+Checking graders
+Checking data
+Checking submissions
+   AC submission js.cpp (C++) OK: AC [CPU: 0.00s @ test case sample/1]
+   AC submission per.py (Python 2) OK: AC [CPU: 0.02s @ test case secret/04-ostgotska]
+   AC submission vv.cpp (C++) OK: AC [CPU: 0.00s @ test case sample/1]
+   Slowest AC runtime: 0.023, setting timelim to 1 secs, safety margin to 2 secs
+   WA submission js_naive.cpp (C++) OK: WA [test case: test case secret/11-naive, CPU: 0.00s @ test case sample/1]
+   WA submission js_offby1.cpp (C++) OK: WA [test case: test case secret/03-ostgotska, CPU: 0.00s @ test case sample/1]
+   WA submission js_offby1_other.cpp (C++) OK: WA [test case: test case secret/11-naive, CPU: 0.00s @ test case sample/1]
+   WA submission js_trunc.cpp (C++) OK: WA [test case: test case sample/1, CPU: 0.00s @ test case sample/1]
+ostgotska tested: 0 errors, 0 warnings
+
+
+pokemon
+===============
+Loading problem pokemon
+Checking config
+Checking statement
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+Checking validators
+Checking graders
+Checking data
+WARNING in test case secret/labyrinth-1: Answer file (4.4 Mb) is within 55% of output limit (8 Mb), you might want to increase output limit
+WARNING in test case secret/labyrinth-5: Answer file (4.5 Mb) is within 56% of output limit (8 Mb), you might want to increase output limit
+WARNING in test case secret/labyrinth-6: Answer file (4.6 Mb) is within 58% of output limit (8 Mb), you might want to increase output limit
+WARNING in test case secret/long-path-1: Answer file (5.2 Mb) is within 65% of output limit (8 Mb), you might want to increase output limit
+WARNING in test case secret/long-path-3: Answer file (4.1 Mb) is within 51% of output limit (8 Mb), you might want to increase output limit
+WARNING in test case secret/long-path-4: Answer file (5.2 Mb) is within 66% of output limit (8 Mb), you might want to increase output limit
+Checking submissions
+   AC submission per.py (Python 2) OK: AC [CPU: 0.45s @ test case secret/random-3]
+   AC submission pokemon_mw.cpp (C++) OK: AC [CPU: 0.25s @ test case secret/random-8]
+   AC submission pokemon_vv.cpp (C++) OK: AC [CPU: 0.38s @ test case secret/random-3]
+   Slowest AC runtime: 0.454, setting timelim to 2 secs, safety margin to 5 secs
+pokemon tested: 0 errors, 6 warnings
+
+
+shortsell
+===============
+Loading problem shortsell
+Checking config
+Checking statement
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+/home/austrin/liu-coding-challenge-2018/problemset.cls exists, will not copy it -- in case of weirdness this is likely culprit
+Checking validators
+Checking graders
+Checking data
+Checking submissions
+   AC submission js.cpp (C++) OK: AC [CPU: 0.01s @ test case secret/04-rand-large]
+   AC submission per.py (Python 2) OK: AC [CPU: 0.04s @ test case secret/04-rand-large]
+   Slowest AC runtime: 0.040, setting timelim to 1 secs, safety margin to 2 secs
+   WA submission loan_wrong_time1.cpp (C++) OK: WA [test case: test case sample/1, CPU: 0.00s @ test case sample/1]
+   WA submission loan_wrong_time2.cpp (C++) OK: WA [test case: test case sample/1, CPU: 0.00s @ test case sample/1]
+   WA submission per.py (Python 2) OK: WA [test case: test case secret/14-same, CPU: 0.04s @ test case secret/06-rand-large]
+   TLE submission js_quadratic.cpp (C++) OK: TLE [test case: test case secret/04-rand-large, CPU: 3.00s @ test case secret/04-rand-large]
+shortsell tested: 0 errors, 0 warnings
+
+
+
+real	3m28.469s
+user	3m10.199s
+sys	0m9.504s
