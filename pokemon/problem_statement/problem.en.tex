@@ -8,7 +8,7 @@ The maze behaves in the following way.
 Assume that the square the player is trying to move into is an obstacle.
 In this case, the player does not move.
 If the square the player is moving into is gravel, the player successfully moves to the square and will stand still on the square.
-If the square is ice however, the player will automatically perform an additional move in the same direction.
+If the square is ice however, the player will first be transfered into that square, and then repeat the procedure again in the same direction.
 This means the player will glide on the ice until either colliding with an obstacle or reaching a square filled with gravel.
 Gliding on ice counts only as one move.
 
