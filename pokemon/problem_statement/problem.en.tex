@@ -10,6 +10,7 @@ In this case, the player does not move.
 If the square the player is moving into is gravel, the player successfully moves to the square and will stand still on the square.
 If the square is ice however, the player will automatically perform an additional move in the same direction.
 This means the player will glide on the ice until either colliding with an obstacle or reaching a square filled with gravel.
+Gliding on ice counts only as one move.
 
 You have almost finished your level design.
 In the maze, there is a goal square that you wish to reach.
@@ -17,7 +18,7 @@ You still have to choose a square to be the starting point of the player.
 Since you do not want the level to be too easy, you want to make sure the number of moves needed to get from the starting point to the goal is sufficiently high.
 
 Can you compute the minimum number of \emph{moves} needed to get from each point in the maze to the goal?
-Note that a move may result in the player traveling multiple squares if gliding on the ice.
+Note that move may result in the player traveling multiple squares if gliding on the ice.
 
 \section*{Input}
 The first line of the input contains the two integers $3 \le C \le 1\,000$ and $3 \le R \le 1\,000$, the number of columns and rows that the maze consists of.
@@ -31,7 +32,7 @@ Each square in the maze is represented by one of the following characters:
 \item an M (\texttt{M}) represents the goal in the maze, which is also covered in gravel
 \end{itemize}
 
-The edges of the maze is always surrounded by gravel squres.
+The edges of the maze are always surrounded by obstacle squares.
 
 \section*{Output}
 Output $R$ lines with $C$ integers each, one for each square, containing the number of moves needed to reach the goal.
