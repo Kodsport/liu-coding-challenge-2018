@@ -1,0 +1,13 @@
+INT(3, 1000, c) SPACE INT(3, 1000, r) NEWLINE
+REGEX("[#]+", s) NEWLINE
+ASSERT(STRLEN(s) == c)
+
+REP(r-2)
+REGEX("#[_M#.]+#", s) NEWLINE
+ASSERT(STRLEN(s) == c)
+END
+
+REGEX("[#]+", s) NEWLINE
+ASSERT(STRLEN(s) == c)
+
+EOF
