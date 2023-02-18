@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
 dx = [-1, 0, 1, 0]
 dy = [0, -1, 0, 1]
 
-(W, H) = list(map(int, input().split()))
-grid = [input() for _ in range(H)]
+(W, H) = map(int, raw_input().split())
+grid = [raw_input() for _ in range(H)]
 
 Q = []
 dist = [(1<<30)]*(5*H*W)
@@ -21,8 +20,8 @@ while Q:
         Q.pop()
         if dist[u] > d: continue
         dr = u % 5
-        x = (u//5) % W
-        y = u//5//W
+        x = (u/5) % W
+        y = u/5/W
         if dr < 4:
             if grid[y][x] == '_':
                 nx = x + dx[dr]
@@ -51,4 +50,4 @@ while Q:
 
 for y in range(H):
     d = [dist[(y*W+x)*5+4] for x in range(W)]
-    print(' '.join(map(str, (v if v < 1<<30 else -1 for v in d))))
+    print ' '.join(map(str, (v if v < 1<<30 else -1 for v in d)))

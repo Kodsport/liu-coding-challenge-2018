@@ -1,11 +1,12 @@
+#!/usr/bin/env python3
 def gcd(a, b):
     if b == 0: return (a, 1, 0)
     (d, x, y) = gcd(b, a % b)
-    return (d, y, x - a/b*y)
+    return (d, y, x - a//b*y)
 
-n = int(raw_input())
-V = [0] + map(int, raw_input().split())
-t = int(raw_input())
+n = int(input())
+V = [0] + list(map(int, input().split()))
+t = int(input())
 
 init = []
 for i in range(1, n+1):
@@ -40,7 +41,7 @@ for i in range(1, n+1):
             coeffs[j] += V[i]
 
 if t % d:
-    print 'impossible'
+    print('impossible')
 else:
     basic = []
     have = 0
@@ -75,7 +76,7 @@ else:
         if cur[i]:
             basic.append('transfer %d 0' % i)
     for L in init:
-        print L
-    for _ in range(t/d):
+        print(L)
+    for _ in range(t//d):
         for L in basic:
-            print L
+            print(L)
